@@ -1,0 +1,37 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: darkblue;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.frame {
+	padding-top: 10px;
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+
+.top {
+}
+
+.center {
+}
+
+.left {
+}
+
+.screen {
+}
+
+.right {
+}
+
+.bottom {
+}
