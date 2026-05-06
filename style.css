@@ -8,30 +8,69 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
+	height: 100vh;
 }
 
+/* FRAME */
+
 .frame {
-	padding-top: 10px;
-	width: 100px;
-	height: 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 20px;
+	width: 1200px;
+	height: 900px;
 	background-color: red;
 }
 
+/* TOP */
+
 .top {
+	height: 40px;
+	background-color: blue;
 }
 
+/* CENTER */
+
 .center {
+	height: 700px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
+
+.screen {
+	width: 800px;
+	height: 800px;
+	background-color: white;
+}
+
+/* LEFT */
 
 .left {
 }
 
-.screen {
+.color-picker {
 }
-
+/* RIGHT */
 .right {
+	display: flex;
+	flex-direction: column;
 }
 
+.btn-size {
+}
+
+.btn-rainbow {
+}
+
+.btn-eraser {
+}
+/* BOTTOM */
 .bottom {
+	height: 40px;
+	width: 40px;
+	background-color: blue;
 }
