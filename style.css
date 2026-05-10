@@ -37,6 +37,7 @@ body {
 		font-size: 36px;
 		color: #e8bf84;
 		font-family: Optima, sans-serif;
+		text-shadow: 5px 5px 10px black;
 	}
 }
 /* LEFT */
@@ -49,8 +50,8 @@ body {
 
 .color-picker {
 	display: flex;
+	justify-content: center;
 	flex-wrap: wrap;
-	background-color: grey;
 	height: 600px;
 	width: 150px;
 }
@@ -59,6 +60,8 @@ body {
 	background-color: white;
 	width: 50px;
 	height: 50px;
+	margin: 5px;
+	border: 1px solid black;
 }
 /* CENTER */
 
