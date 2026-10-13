@@ -4,7 +4,7 @@
 }
 
 body {
-	background-color: darkblue;
+	background-color: darkslategray;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -24,6 +24,9 @@ body {
 	background-color: #ba0c0f;
 }
 
+.pixel {
+	background-color: red;
+}
 /* TOP */
 
 .top {
@@ -72,10 +75,12 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-.screen {
+.canvas {
 	width: 800px;
 	height: 800px;
 	background-color: white;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 /* RIGHT */
