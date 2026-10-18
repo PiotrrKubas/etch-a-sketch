@@ -24,9 +24,6 @@ body {
 	background-color: #ba0c0f;
 }
 
-.pixel {
-	background-color: red;
-}
 /* TOP */
 
 .top {
@@ -81,6 +78,16 @@ body {
 	background-color: white;
 	display: flex;
 	flex-wrap: wrap;
+	flex-grow: 1;
+}
+
+.pixel {
+	background-color: white;
+	box-shadow:
+		inset -1px 0 0 lightgray,
+		inset 0 -1px 0 lightgray,
+		inset 1px 0 0 lightgray,
+		inset 0 1px 0 lightgray;
 }
 
 /* RIGHT */
