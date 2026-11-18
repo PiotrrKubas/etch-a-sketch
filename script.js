@@ -2,15 +2,54 @@ var colorPicker = document.querySelector('.color-picker');
 var buttons = colorPicker.querySelectorAll('button');
 var sizeBtn = document.querySelector('.btn-size');
 var resetBtn = document.querySelector('.btn-reset');
+var eraserBtn = document.querySelector('.btn-eraser');
+var rainbowBtn = document.querySelector('.btn-rainbow');
 var canvas = document.querySelector('.canvas');
 var pixel = document.createElement('div');
 var drawingColor = 'black';
-var eraserBtn = document.querySelector('.btn-eraser');
+var isRainbow = 'false';
 pixel.className = 'pixel';
+const waitingInterval = 250;
+const colors = [
+	'red',
+	'blue',
+	'green',
+	'lightgreen',
+	'pink',
+	'black',
+	'gray',
+	'lightgray',
+	'yellow',
+	'gold',
+	'orange',
+	'purple',
+	'brown',
+	'cyan',
+	'magenta',
+	'navy',
+	'teal',
+	'indigo',
+	'violet',
+	'chocolate',
+];
 
 generateCanvas(10);
 
+eraserBtn.addEventListener('click', (Event) => {
+	isRainbow = false;
+	setTimeout(() => {
+		drawingColor = 'white';
+	}, waitingInterval);
+	console.log('gumka');
+});
+
+rainbowBtn.addEventListener('click', (Event) => {
+	isRainbow = true;
+	setTimeout(rainbowDrawing, waitingInterval);
+});
+
 sizeBtn.addEventListener('click', (Event) => {
+	isRainbow = false;
 	wipeCanvas();
 	var n = prompt('Input a number between 10 and 100: ', 'Number here');
 	while (isNaN(n) || n < 10 || n > 100) {
@@ -20,11 +59,15 @@ sizeBtn.addEventListener('click', (Event) => {
 });
 
 colorPicker.addEventListener('click', (Event) => {
+	isRainbow = false;
+
 	drawingColor = Event.target.id;
 });
 
 resetBtn.addEventListener('click', (Event) => {
-	wipeCanvas();
+	isRainbow = false;
+
+	eraseCanvas();
 });
 
 buttons.forEach((button) => {
@@ -56,6 +99,12 @@ function generateCanvas(playerChoice) {
 		}
 	}
 }
+function eraseCanvas() {
+	const pixels = document.querySelectorAll('.pixel');
+	pixels.forEach((pixel) => {
+		pixel.style.backgroundColor = 'white';
+	});
+}
 
 function wipeCanvas() {
 	const pixels = document.querySelectorAll('.pixel');
@@ -65,3 +114,17 @@ function wipeCanvas() {
 		i--;
 	}
 }
+
+function rainbowDrawing() {
+	drawingColor = colors[getRandomInteger(0, colors.length - 1)];
+	if (isRainbow) {
+		setTimeout(rainbowDrawing, waitingInterval);
+	}
+}
+
+const getRandomInteger = (min, max) => {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+
+	return Math.floor(Math.random() * (max - min)) + min;
+};
